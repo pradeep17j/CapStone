@@ -43,3 +43,9 @@ plt.show()
 # Show day to day percentage change
 data['Day_Perc_Change'] = data['Adj Close'].pct_change()*100
 data.head()
+
+# Drop first column, as it is nan
+data.dropna(axis=0, inplace=True)
+
+# Plot daily return
+data['Day_Perc_Change'].plot(figsize= (12, 6), fontsize=12)
