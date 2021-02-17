@@ -80,4 +80,5 @@ def trend(x):
     elif x <= -9 :
         return 'Bear drop'
     
-    
+data['Trend'] = np.zeros(data['Day_Perc_Change'].count())
+data['Trend'] = data['Day_Perc_Change'].apply(lambda x:trend(x))
