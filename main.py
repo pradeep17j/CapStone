@@ -36,5 +36,10 @@ data.isnull().sum()
 # Check the data types of each column
 data.dtypes
 
+# Plot a simple chart
 data['Adj Close'].plot(figsize=(15, 8))
 plt.show()
+
+# Show day to day percentage change
+data['Day_Perc_Change'] = data['Adj Close'].pct_change()*100
+data.head()
