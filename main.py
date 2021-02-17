@@ -20,3 +20,9 @@ data = yf.download("SPY", start="2020-01-01", end="2020-12-31")
 
 # Convert data to numpy array
 stocks = data.to_numpy()
+
+# Read data from variable data
+data.head()
+
+# Relax the number of decimal places to consider
+data = data.round(2)
