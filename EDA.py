@@ -58,3 +58,26 @@ plt.show()
 
 # Show statistics
 data.Day_Perc_Change.describe()
+
+
+def trend(x):
+    if x > -0.5 and x <= 0.5:
+        return 'Slight or No change'
+    elif x > 0.5 and x <= 1:
+        return 'Slight Positive'
+    elif x > -1 and x <= -0.5:
+        return 'Slight Negative'
+    elif x > 1 and x <= 3:
+        return 'Positive'
+    elif x > -3 and x <= -1:
+        return 'Negative'
+    elif x > 3 and x <= 7:
+        return 'Among top gainers'
+    elif x > -7 and x <= -3:
+        return 'Among top losers'
+    elif x > 9:
+        return 'Bull run'
+    elif x <= -9 :
+        return 'Bear drop'
+    
+    
