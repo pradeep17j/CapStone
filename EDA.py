@@ -82,3 +82,15 @@ def trend(x):
     
 data['Trend'] = np.zeros(data['Day_Perc_Change'].count())
 data['Trend'] = data['Day_Perc_Change'].apply(lambda x:trend(x))
+
+data.head()
+
+data_pie = data.groupby('Trend')
+data_pie.head()
+
+# not working
+# pie_label = sorted([i for i in data.loc[:, 'Trend'].unique()])
+# plt.pie(data_pie['Trend'].count(), labels=pie_label,
+#         autopct="%1.1f%%", radius=2)
+
+data_vol = pct
