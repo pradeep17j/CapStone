@@ -1,4 +1,6 @@
 import yfinance as yf
+import pandas as pd
+import numpy as np
 
 spy = yf.Ticker("SPY")
 
@@ -10,3 +12,4 @@ spy.history(period="max")
 spy.option_chain()
 
 data = yf.download("SPY", start="2020-01-01", end="2020-12-31")
+
