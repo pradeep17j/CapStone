@@ -13,3 +13,5 @@ spy.option_chain()
 
 data = yf.download("SPY", start="2020-01-01", end="2020-12-31")
 
+# Convert data to numpy array
+stocks = data.to_numpy()
