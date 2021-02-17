@@ -26,3 +26,15 @@ data.head()
 
 # Relax the number of decimal places to consider
 data = data.round(2)
+
+# Determine the shape of the dataset
+data.shape
+
+# Check to see if we have any null values
+data.isnull().sum()
+
+# Check the data types of each column
+data.dtypes
+
+data['Adj Close'].plot(figsize=(15, 8))
+plt.show()
