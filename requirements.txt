@@ -1,0 +1,110 @@
+absl-py==0.11.0
+appdirs==1.4.4
+appnope @ file:///opt/concourse/worker/volumes/live/4f734db2-9ca8-4d8b-5b29-6ca15b4b4772/volume/appnope_1606859466979/work
+astunparse==1.6.3
+atari-py==0.2.6
+attrs @ file:///tmp/build/80754af9/attrs_1604765588209/work
+awscli==1.16.190
+backcall==0.2.0
+black==19.10b0
+botocore==1.12.67
+cachetools==4.2.0
+certifi==2020.12.5
+cffi @ file:///opt/concourse/worker/volumes/live/2aa8abfe-8b8d-4889-78d9-837b74c3cd64/volume/cffi_1606255119410/work
+chardet==4.0.0
+click==7.1.2
+cloudpickle==1.6.0
+colorama==0.3.9
+cryptography @ file:///opt/concourse/worker/volumes/live/41c3d62a-f1f8-46ce-414a-9adaf4ea7d96/volume/cryptography_1607636752064/work
+cycler==0.10.0
+decorator==4.4.2
+docutils==0.16
+flake8 @ file:///tmp/build/80754af9/flake8_1601911421857/work
+future==0.18.2
+gast==0.3.3
+google-auth==1.24.0
+google-auth-oauthlib==0.4.2
+google-pasta==0.2.0
+grpcio==1.34.0
+gym==0.17.3
+h5py==2.10.0
+idna @ file:///tmp/build/80754af9/idna_1593446292537/work
+importlib-metadata==3.3.0
+ipykernel @ file:///opt/concourse/worker/volumes/live/73e8766c-12c3-4f76-62a6-3dea9a7da5b7/volume/ipykernel_1596206701501/work/dist/ipykernel-5.3.4-py3-none-any.whl
+ipython @ file:///opt/concourse/worker/volumes/live/27d08825-4fae-44a4-4324-8338f92c3ef3/volume/ipython_1604101240866/work
+ipython-genutils @ file:///tmp/build/80754af9/ipython_genutils_1606773439826/work
+jedi @ file:///opt/concourse/worker/volumes/live/4fa73a83-ad33-499d-579f-7cca37ef2cee/volume/jedi_1608920700229/work
+jmespath==0.9.4
+joblib==1.0.0
+jupyter-client @ file:///tmp/build/80754af9/jupyter_client_1601311786391/work
+jupyter-core @ file:///opt/concourse/worker/volumes/live/a00c6604-807b-490b-6c3f-c66a22f02fab/volume/jupyter_core_1606148990852/work
+Keras-Preprocessing==1.1.2
+kiwisolver==1.3.1
+lxml==4.6.2
+Markdown==3.3.3
+matplotlib==3.3.3
+mccabe==0.6.1
+mkl-fft==1.2.0
+mkl-random==1.1.1
+mkl-service==2.3.0
+multitasking==0.0.9
+mypy-extensions==0.4.3
+nltk==3.5
+numpy @ file:///opt/concourse/worker/volumes/live/a1b5ea96-b05c-40ba-5dfb-4542ece1c186/volume/numpy_and_numpy_base_1603491228242/work
+oauthlib==3.1.0
+opencv-python==4.4.0.46
+opt-einsum==3.3.0
+pandas==1.2.1
+parso==0.7.0
+pathspec==0.7.0
+pexpect @ file:///tmp/build/80754af9/pexpect_1605563209008/work
+pickleshare @ file:///tmp/build/80754af9/pickleshare_1606932040724/work
+Pillow==8.0.1
+prompt-toolkit @ file:///tmp/build/80754af9/prompt-toolkit_1602688806899/work
+protobuf==3.14.0
+ptan==0.4
+ptyprocess @ file:///tmp/build/80754af9/ptyprocess_1609355006118/work/dist/ptyprocess-0.7.0-py2.py3-none-any.whl
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pybullet==3.0.8
+pycodestyle==2.6.0
+pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
+pyflakes==2.2.0
+pyglet==1.5.0
+Pygments @ file:///tmp/build/80754af9/pygments_1607368905949/work
+pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1608057966937/work
+pyparsing==2.4.7
+PySocks @ file:///opt/concourse/worker/volumes/live/ef943889-94fc-4539-798d-461c60b77804/volume/pysocks_1605305801690/work
+python-dateutil==2.8.1
+pytorch-ignite==0.4.2
+pytz==2020.5
+PyYAML==5.3.1
+pyzmq==20.0.0
+regex @ file:///opt/concourse/worker/volumes/live/75a20732-2306-4d51-79ce-516009aca709/volume/regex_1606773011423/work
+requests==2.25.1
+requests-oauthlib==1.3.0
+rsa==3.4.2
+s3transfer==0.2.1
+scipy==1.5.4
+seaborn==0.11.1
+six @ file:///opt/concourse/worker/volumes/live/f983ba11-c9fe-4dff-7ce7-d89b95b09771/volume/six_1605205318156/work
+tensorboard==2.4.0
+tensorboard-plugin-wit==1.7.0
+tensorboardX==2.1
+tensorflow==2.3.1
+tensorflow-estimator==2.3.0
+termcolor==1.1.0
+toml @ file:///tmp/build/80754af9/toml_1592853716807/work
+torch==1.7.1
+torchvision==0.8.2
+tornado @ file:///opt/concourse/worker/volumes/live/d531d395-893c-4ca1-6a5f-717b318eb08c/volume/tornado_1606942307627/work
+tqdm==4.54.1
+traitlets @ file:///tmp/build/80754af9/traitlets_1602787416690/work
+typed-ast @ file:///opt/concourse/worker/volumes/live/f24de662-b4e3-467b-58a8-199787662676/volume/typed-ast_1610484563580/work
+typing-extensions @ file:///tmp/build/80754af9/typing_extensions_1598376058250/work
+urllib3==1.26.2
+wcwidth @ file:///tmp/build/80754af9/wcwidth_1593447189090/work
+Werkzeug==1.0.1
+wrapt==1.12.1
+yfinance==0.1.55
+zipp @ file:///tmp/build/80754af9/zipp_1604001098328/work
