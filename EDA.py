@@ -49,3 +49,12 @@ data.dropna(axis=0, inplace=True)
 
 # Plot daily return
 data['Day_Perc_Change'].plot(figsize= (12, 6), fontsize=12)
+
+# Plot daily return distribution histogram
+data['Day_Perc_Change'].hist(bins=50, figsize = (10, 5))
+plt.xlabel('Daily returns')
+plt.ylabel('Frequency')
+plt.show()
+
+# Show statistics
+data.Day_Perc_Change.describe()
