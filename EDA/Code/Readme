@@ -1,6 +1,6 @@
 EDA Code
 Step Plan:
-1. Visualize/plot the data/check for white noise
+1. Visualize/plot - if stationary - check for white noise; if non-stationary check for trends; seasons
 2. Use aic.wge() or aic5.wge() to identify estimates of p
 and q
 3. Use the estimate of p and q to get estimates of the phis
