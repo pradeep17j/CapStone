@@ -1,0 +1,13 @@
+EDA Code
+Step Plan:
+1. Visualize/plot the data/check for white noise
+2. Use aic.wge() or aic5.wge() to identify estimates of p
+and q
+3. Use the estimate of p and q to get estimates of the phis
+and thetas using est.ar.wge() or est.arma.wge()
+4. Use the estimated model to forecast and so on
+5. Time-Series Multivariate check to determine if data technical indicator useful for predicting stockprice
+6. Calculate the ASE
+7. Compare ASE's for technical indicators
+8. Check if technical feature is redundant to other technical indicators
+9. Use the top technical indicators for either a market that is trending or violatile
