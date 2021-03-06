@@ -1,0 +1,139 @@
+---
+title: "StockStatsAnalysis"
+author: "Tom Gianelle"
+date: "2/28/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r libraries}
+library(nnfor)
+library(forecast)
+library(vars)
+library(tswge)
+```
+
+## Read Data
+```{r read data, echo=FALSE}
+#Unzip the EDA/Data/DoneData.csv and choose when prompted from file dialogue box
+ST = read.csv(file.choose(),header = TRUE)
+head(ST)
+```
+## Including Plots by index
+```{r plot data by index, echo=FALSE}
+# Tom - pulling dow data and creating index level technical indicators
+
+```
+## Including Plots by stock
+```{r plot data by stock, echo=FALSE}
+AAPL = ST[ST$tic == "AAPL", ]
+
+plotts.sample.wge(AAPL$adjcp)
+plotts.sample.wge(AAPL$macd)
+plotts.sample.wge(AAPL$adx)
+plotts.sample.wge(AAPL$cci)
+plotts.sample.wge(AAPL$rsi)
+plotts.sample.wge(AAPL$turbulence)
+```
+
+## Multivariate Predictor analysis by individual stocks
+```{r macd multivariate prediction, echo=FALSE}
+
+AAPL = ST[ST$tic == "AAPL", ]
+
+VAR_SM = VAR(cbind(AAPL$adjcp[0:2919],AAPL$macd[0:2919]),lag.max = 2, type = "both")
+
+pred = predict(VAR_SM,n.ahead = 7)
+
+plot(AAPL$adjcp, type = "l")
+lines(seq(2920,2926,1),pred$fcst$y1[,1],col = "red")
+
+ASE = mean((AAPL$adjcp[2920:2926] - pred$fcst$y1[1:7])^2)
+
+ASE
+```
+
+```{r rsi multivariate prediction, echo=FALSE}
+#ST = read.csv(file.choose(),header = TRUE)
+
+AAPL = ST[ST$tic == "AAPL", ]
+AAPLsmall = AAPL[0:2919,]
+
+VAR_SM = VAR(cbind(AAPLsmall$adjcp,AAPLsmall$rsi),lag.max = 2, type = "both")
+
+pred = predict(VAR_SM,n.ahead = 7)
+
+plot(AAPL$adjcp, type = "l")
+lines(seq(2920,2926,1),pred$fcst$y1[,1],col = "red")
+
+ASE = mean((AAPL$adjcp[2920:2926] - pred$fcst$y1[1:7])^2)
+
+ASE
+```
+```{r cci multivariate prediction, echo=FALSE}
+#ST = read.csv(file.choose(),header = TRUE)
+
+AAPL = ST[ST$tic == "AAPL", ]
+AAPLsmall = AAPL[0:2919,]
+
+VAR_SM = VAR(cbind(AAPLsmall$adjcp,AAPLsmall$cci),lag.max = 2, type = "both")
+
+pred = predict(VAR_SM,n.ahead = 7)
+
+plot(AAPL$adjcp, type = "l")
+lines(seq(2920,2926,1),pred$fcst$y1[,1],col = "red")
+
+ASE = mean((AAPL$adjcp[2920:2926] - pred$fcst$y1[1:7])^2)
+
+ASE
+```
+```{r adx multivariate prediction, echo=FALSE}
+#ST = read.csv(file.choose(),header = TRUE)
+
+AAPL = ST[ST$tic == "AAPL", ]
+AAPLsmall = AAPL[0:2919,]
+
+VAR_SM = VAR(cbind(AAPLsmall$adjcp,AAPLsmall$adx),lag.max = 2, type = "both")
+
+pred = predict(VAR_SM,n.ahead = 7)
+
+plot(AAPL$adjcp, type = "l")
+lines(seq(2920,2926,1),pred$fcst$y1[,1],col = "red")
+
+ASE = mean((AAPL$adjcp[2920:2926] - pred$fcst$y1[1:7])^2)
+
+ASE
+```
+```{r mlp NN - using all features macd, rsi, adx, cci multivariate prediction, echo=FALSE}
+#ST = read.csv(file.choose(),header = TRUE)
+
+i =  dim(AAPLsmall)
+j = i[1]-2
+SMsmallDF = data.frame(macd = ts(AAPLsmall$macd), rsi = ts(AAPLsmall$rsi), cci = ts(AAPLsmall$cci), ts(AAPLsmall$adx) )
+#AAPLlag2=AAPLsmall$adjcp[3:i]
+
+j = i[1]-1
+fit.mlp = mlp(ts(AAPLsmall$adjcp),reps = 10,comb = "mean",xreg = SMsmallDF)
+fit.mlp
+plot(fit.mlp)
+SMDF = data.frame(macd = ts(AAPL$macd), rsi = ts(AAPL$rsi), cci = ts(AAPL$cci), ts(AAPL$adx) )
+fore.mlp = forecast(fit.mlp, h = 7, xreg = SMDF)
+plot(fore.mlp)
+
+plot(AAPL$adjcp, type = "l")
+lines(seq(2920,2926,1),fore.mlp$mean,col = "blue")
+
+ASE = mean((AAPL$adjcp[2920:2926] - fore.mlp$mean)^2)
+ASE
+
+```
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
